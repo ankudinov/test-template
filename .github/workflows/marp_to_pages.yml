@@ -9,6 +9,7 @@ on:
     - excalidraw/*
     - drawio/*
     - tldraw/*
+    - .github/workflows/marp_to_pages.yml
 permissions:
   contents: write
 jobs:
