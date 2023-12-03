@@ -23,10 +23,10 @@ jobs:
       - name: Copy images 🖼️
         run: |
           mkdir build \
-          && ( [-d "build/img"] && cp -R img build/img ) \
-          && ( [-d "build/excalidraw"] && cp -R excalidraw build/excalidraw ) \
-          && ( [-d "build/drawio"] && cp -R drawio build/drawio ) \
-          && ( [-d "build/tldraw"] && cp -R tldraw build/tldraw )
+          && if [ -d "build/img" ]; then cp -R img build/img; fi \
+          && if [ -d "build/excalidraw" ]; then cp -R excalidraw build/excalidraw; fi \
+          && if [ -d "build/drawio" ]; then cp -R drawio build/drawio; fi \
+          && if [ -d "build/tldraw" ]; then cp -R tldraw build/tldraw; fi
 
       - name: Build HTML from marp_slides.md 🔨
         uses: docker://marpteam/marp-cli:v3.0.2
